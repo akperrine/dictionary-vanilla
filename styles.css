@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #22223b;
+  --secondary: #4a4e69;
+  --tertiary: #9a8c98;
+  --font: #f2e9e4;
+}
+
+body {
+  font-family: "BIZ UDPMincho", serif;
+  color: var(--font);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.app-container {
+  background-color: var(--primary);
+  min-height: 100vh;
+  margin: 10px 25px 0 25px;
+  padding: 0 200px 0 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+}
+
+.header {
+  margin: 20px;
+}
+
+.header h1 {
+  margin-bottom: 30px;
+  font-size: 3.5rem;
+  text-decoration: underline;
+}
+
+.input .search-box {
+  font-size: 25px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid var(--tertiary);
+  background-color: var(--font);
+}
+
+.search-box:focus {
+  outline: none;
+  background-color: var(--secondary);
+  color: var(--font);
+}
+
+.display-container {
+  padding: 20px;
+  border-left: 5px solid #f2e9e4;
+  border-radius: 3px;
+}
+
+.title {
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+.definition {
+  word-break: break-all;
+  font-size: 25px;
+}
+
+.pronunciation {
+  margin-bottom: 15px;
+}
+
+.synonym-container {
+  margin-top: 25px;
+}
+
+.synonym-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.synonym-list-item {
+  margin-right: 15px;
+  background-color: #4a4e69;
+  border-radius: 20px;
+  padding: 10px;
+}

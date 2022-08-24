@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Dictionary</title>
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="header">
+        <h1>Dictionary</h1>
+        <div class="input">
+          <input
+            placeholder="lookup a word"
+            type="text"
+            class="search-box"
+            onkeypress="handle(event)"
+          />
+        </div>
+      </div>
+      <div class="display-container">
+        <div class="word title">
+          Word:
+          <span class="definition">
+            a definition a;lksjdlfkasj;dlfkajs;dlfkj;asdlfkj;asldkjfd;sa</span
+          >
+        </div>
+        <div class="pronunciation">Pronunciation:</div>
+        <audio
+          src="//ssl.gstatic.com/dictionary/static/sounds/20200429/hello--_gb_1.mp3"
+          controls
+        ></audio>
+        <div class="synonym-container">
+          <h6 class="synonym-header title">Synonyms</h6>
+          <ul class="synonym-list">
+            <li class="synonym-list-item">synonym</li>
+            <li class="synonym-list-item">synonym</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script defer src="script.js"></script>
+  </body>
+</html>
