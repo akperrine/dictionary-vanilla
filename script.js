@@ -1,3 +1,4 @@
+const displayContainer = document.querySelector(".display-container");
 const title = document.querySelector(".word");
 const definition = document.querySelector(".definition");
 const pronunciationContainer = document.querySelector(".pronunciation");
@@ -73,5 +74,6 @@ const handle = async (e) => {
   if (e.keyCode === 13) {
     const searchWord = e.target.value;
     handleFetch(searchWord);
+    displayContainer.classList.remove("hidden");
   }
 };

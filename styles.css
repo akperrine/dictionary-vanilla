@@ -104,3 +104,7 @@ body {
   border-radius: 20px;
   padding: 10px;
 }
+
+.hidden {
+  opacity: 0;
+}
