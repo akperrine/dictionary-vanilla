@@ -1,7 +1,7 @@
-const title = document.querySelector(".word-title");
+const title = document.querySelector(".word");
 const definition = document.querySelector(".definition");
-const pronunciation = document.querySelector(".pronunciation");
-const audio = document.querySelector(".audio");
+const pronunciationContainer = document.querySelector(".pronunciation");
+const synonymHeader = document.querySelector(".synonym-header");
 const synonymList = document.querySelector(".synonym-list");
 
 const handleFetch = async (word) => {
@@ -19,15 +19,15 @@ const handleFetch = async (word) => {
   }
 };
 const distributeJson = (dictJson) => {
-  console.log(dictJson[0].meanings);
   const word = dictJson[0].word;
   const arrOfDefs = dictJson[0].meanings;
   const writtenPhonetic = dictJson[0].phonetic;
   const audioPhonetic = dictJson[0].phonetics[0].audio;
+  const synonymList = dictJson[0].meanings[0].synonyms;
 
   updateDefinition(word, arrOfDefs);
-  pronunciation.innerText = `Pronunciation: ${writtenPhonetic}`;
-  audio.src = audioPhonetic;
+  updateAudio(writtenPhonetic, audioPhonetic);
+  updateSynonyms(synonymList);
 };
 
 const mapDefinitions = (definitionArr) => {
@@ -44,6 +44,29 @@ const updateDefinition = (word, definitionArr) => {
   title.innerText = `${word}:`;
 
   mapDefinitions(definitionArr);
+};
+
+const updateAudio = (str, linkStr) => {
+  pronunciationContainer.innerHTML = ``;
+  pronunciationContainer.innerHTML = `<h6 class="pronunciation">Pronunciation: ${
+    str === undefined ? "" : str
+  }</h6>
+  <audio class="audio" src="${linkStr}" controls></audio>`;
+};
+
+const mapSynonyms = (synArr) => {
+  synonymList.innerHTML = ``;
+  synArr.map((synonym) => {
+    const listItem = document.createElement("li");
+    listItem.innerHTML = `<li class="synonym-list-item">${synonym}</li>`;
+    synonymList.appendChild(listItem);
+  });
+};
+
+const updateSynonyms = (synArr) => {
+  synonymHeader.innerText = `Synonym`;
+
+  mapSynonyms(synArr);
 };
 
 const handle = async (e) => {
