@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+li {
+  list-style-type: none;
+}
+
 :root {
   --primary: #22223b;
   --secondary: #4a4e69;
@@ -62,18 +66,26 @@ body {
   border-radius: 3px;
 }
 
-.title {
-  font-size: 30px;
-  margin-bottom: 25px;
+.word-title {
+  font-size: 35px;
+  margin-bottom: 16px;
 }
 
 .definition {
   word-break: break-all;
   font-size: 25px;
+  list-style-type: circle;
+  margin-bottom: 20px;
+}
+
+.definition-item {
+  margin: 15px 0 15px 40px;
+  list-style: disc;
 }
 
 .pronunciation {
   margin-bottom: 15px;
+  font-size: 30px;
 }
 
 .synonym-container {
